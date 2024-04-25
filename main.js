@@ -15,6 +15,15 @@ function attachEncryptForm(){
   });
 }
 
+function showPassWord(passId) {
+  var x = document.getElementById(passId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+} 
+
 function attachDecryptForm(){
   $("#decrypt-set").on("submit", function(e){
     e.preventDefault();
