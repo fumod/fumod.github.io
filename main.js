@@ -41,6 +41,18 @@ function attachDecryptForm(){
   });
 }
 
+function copyEncryptedText() {
+  const copyText = document.getElementById("encrypted-result");
+  const textToCopy = copyText.innerText;
+  // Use the Clipboard API to write the text
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    // Optional: Alert the user that the text has been copied
+    // alert("Copied the text: " + textToCopy);
+  }).catch(err => {
+    console.error('Copy failed: ', err);
+  });
+}
+
 function attachClearForm(){
   $(".clear-form").on("click", function(e){
     e.stopImmediatePropagation();
